@@ -1,0 +1,57 @@
+#ifndef stackArr_H
+#define stackArr_H
+ 
+ #include<stdio.h>
+ #include<stdlib.h>
+#include <stdbool.h>
+#define MAX 5
+
+
+typedef struct stack{
+    int data[MAX];
+    int top;
+}STACK;
+
+void initS(STACK *A){
+    A->top = -1;
+}
+
+bool isFull(STACK A){
+    return A.top == MAX - 1 ? true : false;
+}
+
+bool isEmpty(STACK A){
+    return A.top == -1 ? true : false;
+}
+
+int topS(STACK A){
+    return A.data[A.top];
+}
+
+void pushS(STACK *A, int data){
+    if(!isFull(*A)){
+        A->top++;
+        A->data[A->top] = data;
+    }
+    else{
+        printf("Stack is Full");
+    }
+}
+
+void popS(STACK *A){
+    if(!isEmpty(*A)){
+        A->top--;
+    }
+    else{
+        printf("Stack is Empty");
+    }
+}
+
+void printS(STACK A){
+    int x;
+    for(x=0; x <= A.top; x++){
+        printf("\n%d ", A.data[x]);
+    }
+}
+
+#endif
