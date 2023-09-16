@@ -1,0 +1,19 @@
+#ifndef stackLL_H
+#define stackLL_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+typedef struct node{
+	int data;
+	struct node *link;
+}*Node;
+
+typedef struct{
+	Node top;
+}STACK;
+
+
+
+#endif
